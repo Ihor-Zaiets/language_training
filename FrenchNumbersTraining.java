@@ -27,6 +27,7 @@ public class FrenchNumbersTraining {
                 System.out.println("Correct.");
                 System.out.printf("Correct answers in a row: %d\n\n", number.getCorrectAnswersInARow());
             } else {
+                number.setCorrectAnswersInARow(0);
                 System.out.printf("Wrong. Correct answer: %s\n\n", number.getStringName());
             }
         }
