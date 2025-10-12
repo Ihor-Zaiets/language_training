@@ -23,6 +23,7 @@ public class FrenchNumbersTraining {
                     numbers.remove(number);
                     System.out.printf("Correct answers in a row: %d\n", number.getCorrectAnswersInARow());
                     System.out.println("Removing number from number pull.\n");
+                    continue;
                 }
                 System.out.println("Correct.");
                 System.out.printf("Correct answers in a row: %d\n\n", number.getCorrectAnswersInARow());
