@@ -11,6 +11,7 @@ public class FrenchNumbersTraining {
         // 4. remove from number pull after 3 in a row
         Scanner scanner = new Scanner(System.in);
         List<Number> numbers = getNumbersFrom1To10();
+        numbers.addAll(getNumbersFrom11To19());
 
         while (!numbers.isEmpty()) {
             Number number = numbers.get(new Random().nextInt(numbers.size()));
@@ -47,6 +48,33 @@ public class FrenchNumbersTraining {
         numbers.add(new Number(8, "huit"));
         numbers.add(new Number(9, "neuf"));
         numbers.add(new Number(10, "dix"));
+        return numbers;
+    }
+    public static List<Number> getNumbersFrom11To19() {
+        List<Number> numbers = new ArrayList<>();
+        numbers.add(new Number(11, "onze"));
+        numbers.add(new Number(12, "douze"));
+        numbers.add(new Number(13, "treize"));
+        numbers.add(new Number(14, "quatorze"));
+        numbers.add(new Number(15, "quinze"));
+        numbers.add(new Number(16, "seize"));
+        numbers.add(new Number(17, "dix-sept"));
+        numbers.add(new Number(18, "dix-huit"));
+        numbers.add(new Number(19, "dix-neuf"));
+        return numbers;
+    }
+
+    public static List<Number> getNumbersFrom20To100() {
+        List<Number> numbers = new ArrayList<>();
+        numbers.add(new Number(20, "vingt"));
+        numbers.add(new Number(30, "trente"));
+        numbers.add(new Number(40, "quarante"));
+        numbers.add(new Number(50, "cinquante"));
+        numbers.add(new Number(60, "soixante"));
+        numbers.add(new Number(70, "soixante-dix"));
+        numbers.add(new Number(80, "quatre-vingts"));
+        numbers.add(new Number(90, "quatre-vingt-dix"));
+        numbers.add(new Number(100, "cent"));
         return numbers;
     }
 }
