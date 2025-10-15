@@ -10,6 +10,7 @@ public class FrenchNumbersTraining {
         // 3. correct numbers in a row
         // 4. remove from number pull after 3 in a row
         Scanner scanner = new Scanner(System.in);
+        List<Number> weakNumber = new ArrayList<>();
         List<Number> numbers = getNumbersFrom1To10();
         numbers.addAll(getNumbersFrom11To19());
 
@@ -30,10 +31,13 @@ public class FrenchNumbersTraining {
                 System.out.printf("Correct answers in a row: %d\n\n", number.getCorrectAnswersInARow());
             } else {
                 number.setCorrectAnswersInARow(0);
+                weakNumber.add(number);
                 System.out.printf("Wrong. Correct answer: %s\n\n", number.getStringName());
             }
         }
         System.out.println("Well done.");
+        System.out.println("Weak numbers:");
+        System.out.println(weakNumber);
     }
 
     public static List<Number> getNumbersFrom1To10() {
