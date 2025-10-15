@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.*;
 
 public class FrenchNumbersTraining {
     public static void main(String[] args) {
@@ -10,16 +11,29 @@ public class FrenchNumbersTraining {
         // 3. correct numbers in a row
         // 4. remove from number pull after 3 in a row
         Scanner scanner = new Scanner(System.in);
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        int numberOfSecondForAnswer = 3;
         List<Number> weakNumber = new ArrayList<>();
         List<Number> numbers = getNumbersFrom1To10();
         numbers.addAll(getNumbersFrom11To19());
 
         while (!numbers.isEmpty()) {
             Number number = numbers.get(new Random().nextInt(numbers.size()));
+            System.out.printf("You have %d seconds to answer.\n", numberOfSecondForAnswer);
             System.out.printf("Number: %d\n", number.getNumericValue());
             System.out.print("Write number name: ");
-            String answer = scanner.nextLine();
-            if (number.getStringName().equals(answer.toLowerCase())) {
+            Future<String> future = executor.submit(scanner::nextLine);
+            boolean isAnswerCorrect = false;
+            try {
+                String answer = future.get(numberOfSecondForAnswer, TimeUnit.SECONDS);
+                isAnswerCorrect = number.getStringName().equals(answer.toLowerCase());
+            } catch (TimeoutException e) {
+                weakNumber.add(number);
+                isAnswerCorrect = false;
+            } catch (ExecutionException | InterruptedException | RuntimeException e) {
+                throw new RuntimeException(e);
+            }
+            if (isAnswerCorrect) {
                 number.setCorrectAnswersInARow(number.getCorrectAnswersInARow() + 1);
                 if (number.getCorrectAnswersInARow() == 3) {
                     numbers.remove(number);
