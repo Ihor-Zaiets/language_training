@@ -12,7 +12,7 @@ public class FrenchNumbersTraining {
         // 4. remove from number pull after 3 in a row
         Scanner scanner = new Scanner(System.in);
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        int numberOfSecondForAnswer = 3;
+        int numberOfSecondForAnswer = 7;
         List<Number> weakNumber = new ArrayList<>();
         List<Number> numbers = getNumbersFrom1To10();
         numbers.addAll(getNumbersFrom11To19());
