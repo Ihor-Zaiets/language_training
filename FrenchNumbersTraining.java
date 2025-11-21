@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.*;
 
 public class FrenchNumbersTraining {
@@ -54,6 +51,7 @@ public class FrenchNumbersTraining {
         }
         System.out.println("Well done.");
         System.out.println("Weak numbers:");
+        weakNumber.sort(Comparator.comparingInt(Number::getNumericValue));
         System.out.println(weakNumber);
     }
 
