@@ -17,9 +17,9 @@ public class FrenchNumbersTraining {
         List<Number> numbers = getNumbersFrom1To10();
         numbers.addAll(getNumbersFrom11To19());
 
+        System.out.printf("You have %d seconds to answer.\n", numberOfSecondForAnswer);
         while (!numbers.isEmpty()) {
             Number number = numbers.get(new Random().nextInt(numbers.size()));
-            System.out.printf("You have %d seconds to answer.\n", numberOfSecondForAnswer);
             System.out.printf("Number: %d\n", number.getNumericValue());
             System.out.print("Write number name: ");
             Future<String> future = executor.submit(scanner::nextLine);
