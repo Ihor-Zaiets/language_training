@@ -28,8 +28,10 @@ public class FrenchNumbersTraining {
                 String answer = future.get(numberOfSecondForAnswer, TimeUnit.SECONDS);
                 isAnswerCorrect = number.getStringName().equals(answer.toLowerCase());
             } catch (TimeoutException e) {
+                number.setCorrectAnswersInARow(0);
                 weakNumber.add(number);
-                isAnswerCorrect = false;
+                System.out.printf("\nTime is up. Correct answer: %s\n\n", number.getStringName());
+                continue;
             } catch (ExecutionException | InterruptedException | RuntimeException e) {
                 throw new RuntimeException(e);
             }
