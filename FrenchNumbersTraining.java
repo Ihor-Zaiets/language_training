@@ -38,6 +38,7 @@ public class FrenchNumbersTraining {
         }
         System.out.println("Well done.");
         System.out.println("Weak numbers:");
+        weakNumber.sort(Comparator.comparingInt(Number::getNumericValue));
         System.out.println(weakNumber);
     }
 
