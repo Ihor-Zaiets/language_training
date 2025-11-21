@@ -14,7 +14,8 @@ public class FrenchNumbersTraining {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         int numberOfSecondForAnswer = 7;
         List<Number> weakNumber = new ArrayList<>();
-        List<Number> numbers = getNumbersFrom1To10();
+        List<Number> numbers = new ArrayList<>();
+        numbers.addAll(getNumbersFrom1To10());
         numbers.addAll(getNumbersFrom11To19());
 
         System.out.printf("You have %d seconds to answer.\n", numberOfSecondForAnswer);
