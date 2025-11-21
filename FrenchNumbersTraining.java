@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.*;
 
 public class FrenchNumbersTraining {
     public static void main(String[] args) {
@@ -11,32 +10,17 @@ public class FrenchNumbersTraining {
         // 3. correct numbers in a row
         // 4. remove from number pull after 3 in a row
         Scanner scanner = new Scanner(System.in);
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        int numberOfSecondForAnswer = 7;
         List<Number> weakNumber = new ArrayList<>();
         List<Number> numbers = new ArrayList<>();
         numbers.addAll(getNumbersFrom1To10());
         numbers.addAll(getNumbersFrom11To19());
 
-        System.out.printf("You have %d seconds to answer.\n", numberOfSecondForAnswer);
         while (!numbers.isEmpty()) {
             Number number = numbers.get(new Random().nextInt(numbers.size()));
             System.out.printf("Number: %d\n", number.getNumericValue());
             System.out.print("Write number name: ");
-            Future<String> future = executor.submit(scanner::nextLine);
-            boolean isAnswerCorrect = false;
-            try {
-                String answer = future.get(numberOfSecondForAnswer, TimeUnit.SECONDS);
-                isAnswerCorrect = number.getStringName().equals(answer.toLowerCase());
-            } catch (TimeoutException e) {
-                number.setCorrectAnswersInARow(0);
-                weakNumber.add(number);
-                System.out.printf("\nTime is up. Correct answer: %s\n\n", number.getStringName());
-                continue;
-            } catch (ExecutionException | InterruptedException | RuntimeException e) {
-                throw new RuntimeException(e);
-            }
-            if (isAnswerCorrect) {
+            String answer = scanner.nextLine();
+            if (number.getStringName().equals(answer.toLowerCase())) {
                 number.setCorrectAnswersInARow(number.getCorrectAnswersInARow() + 1);
                 if (number.getCorrectAnswersInARow() == 3) {
                     numbers.remove(number);
