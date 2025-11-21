@@ -35,4 +35,9 @@ public class Number {
     public void setCorrectAnswersInARow(int correctAnswersInARow) {
         this.correctAnswersInARow = correctAnswersInARow;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(numericValue);
+    }
 }
