@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class FrenchNumbersTraining {
+public class LanguageTraining {
     public static void main(String[] args) {
         // 1. number
         // 2. string name
