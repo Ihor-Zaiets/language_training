@@ -11,6 +11,7 @@ public class FrenchNumbersTraining {
         List<Number> numbers = new ArrayList<>();
         numbers.addAll(getNumbersFrom1To10());
         numbers.addAll(getNumbersFrom11To19());
+        numbers.addAll(getNumbersFrom20To100());
 
         while (!numbers.isEmpty()) {
             Number number = numbers.get(new Random().nextInt(numbers.size()));
