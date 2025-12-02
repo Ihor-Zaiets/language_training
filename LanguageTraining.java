@@ -1,42 +1,24 @@
 import java.util.*;
-import java.util.concurrent.*;
 
-public class FrenchNumbersTraining {
+public class LanguageTraining {
     public static void main(String[] args) {
         // 1. number
         // 2. string name
         // 3. correct numbers in a row
         // 4. remove from number pull after 3 in a row
         Scanner scanner = new Scanner(System.in);
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        int numberOfSecondForAnswer = 7;
         List<Number> weakNumber = new ArrayList<>();
         List<Number> numbers = new ArrayList<>();
         numbers.addAll(getNumbersFrom1To10());
-//        numbers.addAll(getNumbersFrom11To19());
-//        numbers.addAll(getNumbersFrom20To100());
+        numbers.addAll(getNumbersFrom11To19());
+        numbers.addAll(getNumbersFrom20To100());
 
-        System.out.printf("You have %d seconds to answer.\n", numberOfSecondForAnswer);
         while (!numbers.isEmpty()) {
             Number number = numbers.get(new Random().nextInt(numbers.size()));
             System.out.printf("Number: %d\n", number.getNumericValue());
             System.out.print("Write number name: ");
-            Future<String> future = executor.submit(scanner::nextLine); //something with threading
-            // scanner blocks thread and after timeout system starts working unpredictably.
-            // need to deep my knowledge of threading in java. i can fix it using GPT< but i want to understand
-            boolean isAnswerCorrect = false;
-            try {
-                String answer = future.get(numberOfSecondForAnswer, TimeUnit.SECONDS);
-                isAnswerCorrect = number.getStringName().equals(answer.toLowerCase());
-            } catch (TimeoutException e) {
-                number.setCorrectAnswersInARow(0);
-                weakNumber.add(number);
-                System.out.printf("\nTime is up. Correct answer: %s\n\n", number.getStringName());
-                continue;
-            } catch (ExecutionException | InterruptedException | RuntimeException e) {
-                throw new RuntimeException(e);
-            }
-            if (isAnswerCorrect) {
+            String answer = scanner.nextLine();
+            if (number.getStringName().equals(answer.toLowerCase())) {
                 number.setCorrectAnswersInARow(number.getCorrectAnswersInARow() + 1);
                 if (number.getCorrectAnswersInARow() == 3) {
                     numbers.remove(number);
