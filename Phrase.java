@@ -1,23 +1,23 @@
 public class Phrase {
-    private int numericValue;
+    private String phraseToLearn;
     private String stringName;
     private int correctAnswersInARow;
 
     public Phrase() {
     }
 
-    public Phrase(int numericValue, String stringName) {
-        this.numericValue = numericValue;
+    public Phrase(String phraseToLearn, String stringName) {
+        this.phraseToLearn = phraseToLearn;
         this.stringName = stringName;
         this.correctAnswersInARow = 0;
     }
 
-    public int getNumericValue() {
-        return numericValue;
+    public String getPhraseToLearn() {
+        return phraseToLearn;
     }
 
-    public void setNumericValue(int numericValue) {
-        this.numericValue = numericValue;
+    public void setPhraseToLearn(String phraseToLearn) {
+        this.phraseToLearn = phraseToLearn;
     }
 
     public String getStringName() {
@@ -38,6 +38,6 @@ public class Phrase {
 
     @Override
     public String toString() {
-        return String.valueOf(numericValue);
+        return String.valueOf(phraseToLearn);
     }
 }

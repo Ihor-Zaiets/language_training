@@ -15,7 +15,7 @@ public class LanguageTraining {
 
         while (!phrases.isEmpty()) {
             Phrase phrase = phrases.get(new Random().nextInt(phrases.size()));
-            System.out.printf("Number: %d\n", phrase.getNumericValue());
+            System.out.printf("Phrase: %s\n", phrase.getPhraseToLearn());
             System.out.print("Write number name: ");
             String answer = scanner.nextLine();
             if (phrase.getStringName().equals(answer.toLowerCase())) {
@@ -36,7 +36,7 @@ public class LanguageTraining {
         }
         System.out.println("Well done.");
         System.out.println("Weak numbers:");
-        weakPhrase.sort(Comparator.comparingInt(Phrase::getNumericValue));
+        weakPhrase.sort(Comparator.comparing(Phrase::getPhraseToLearn));
         System.out.println(weakPhrase);
     }
 }
