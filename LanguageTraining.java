@@ -12,6 +12,8 @@ public class LanguageTraining {
         phrases.addAll(LearningData.getNumbersFrom1To10());
         phrases.addAll(LearningData.getNumbersFrom11To19());
         phrases.addAll(LearningData.getNumbersFrom20To100());
+        phrases.addAll(LearningData.getPronounsWithVerbToBe());
+        phrases.addAll(LearningData.getPronounsWithVerbToHave());
 
         while (!phrases.isEmpty()) {
             Phrase phrase = phrases.get(new Random().nextInt(phrases.size()));
