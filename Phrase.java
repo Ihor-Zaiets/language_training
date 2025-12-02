@@ -1,14 +1,14 @@
 public class Phrase {
     private String phraseToLearn;
-    private String stringName;
+    private String correctAnswer;
     private int correctAnswersInARow;
 
     public Phrase() {
     }
 
-    public Phrase(String phraseToLearn, String stringName) {
+    public Phrase(String phraseToLearn, String correctAnswer) {
         this.phraseToLearn = phraseToLearn;
-        this.stringName = stringName;
+        this.correctAnswer = correctAnswer;
         this.correctAnswersInARow = 0;
     }
 
@@ -20,12 +20,12 @@ public class Phrase {
         this.phraseToLearn = phraseToLearn;
     }
 
-    public String getStringName() {
-        return stringName;
+    public String getCorrectAnswer() {
+        return correctAnswer;
     }
 
-    public void setStringName(String stringName) {
-        this.stringName = stringName;
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
     }
 
     public int getCorrectAnswersInARow() {

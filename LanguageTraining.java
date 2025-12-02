@@ -18,7 +18,7 @@ public class LanguageTraining {
             System.out.printf("Phrase: %s\n", phrase.getPhraseToLearn());
             System.out.print("Write number name: ");
             String answer = scanner.nextLine();
-            if (phrase.getStringName().equals(answer.toLowerCase())) {
+            if (phrase.getCorrectAnswer().equals(answer.toLowerCase())) {
                 phrase.setCorrectAnswersInARow(phrase.getCorrectAnswersInARow() + 1);
                 if (phrase.getCorrectAnswersInARow() == 3) {
                     phrases.remove(phrase);
@@ -31,7 +31,7 @@ public class LanguageTraining {
             } else {
                 phrase.setCorrectAnswersInARow(0);
                 weakPhrase.add(phrase);
-                System.out.printf("Wrong. Correct answer: %s\n\n", phrase.getStringName());
+                System.out.printf("Wrong. Correct answer: %s\n\n", phrase.getCorrectAnswer());
             }
         }
         System.out.println("Well done.");
