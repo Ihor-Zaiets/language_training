@@ -7,36 +7,36 @@ public class LanguageTraining {
         // 3. correct numbers in a row
         // 4. remove from number pull after 3 in a row
         Scanner scanner = new Scanner(System.in);
-        List<Number> weakNumber = new ArrayList<>();
-        List<Number> numbers = new ArrayList<>();
-        numbers.addAll(LearningData.getNumbersFrom1To10());
-        numbers.addAll(LearningData.getNumbersFrom11To19());
-        numbers.addAll(LearningData.getNumbersFrom20To100());
+        List<Phrase> weakPhrase = new ArrayList<>();
+        List<Phrase> phrases = new ArrayList<>();
+        phrases.addAll(LearningData.getNumbersFrom1To10());
+        phrases.addAll(LearningData.getNumbersFrom11To19());
+        phrases.addAll(LearningData.getNumbersFrom20To100());
 
-        while (!numbers.isEmpty()) {
-            Number number = numbers.get(new Random().nextInt(numbers.size()));
-            System.out.printf("Number: %d\n", number.getNumericValue());
+        while (!phrases.isEmpty()) {
+            Phrase phrase = phrases.get(new Random().nextInt(phrases.size()));
+            System.out.printf("Number: %d\n", phrase.getNumericValue());
             System.out.print("Write number name: ");
             String answer = scanner.nextLine();
-            if (number.getStringName().equals(answer.toLowerCase())) {
-                number.setCorrectAnswersInARow(number.getCorrectAnswersInARow() + 1);
-                if (number.getCorrectAnswersInARow() == 3) {
-                    numbers.remove(number);
-                    System.out.printf("Correct answers in a row: %d\n", number.getCorrectAnswersInARow());
+            if (phrase.getStringName().equals(answer.toLowerCase())) {
+                phrase.setCorrectAnswersInARow(phrase.getCorrectAnswersInARow() + 1);
+                if (phrase.getCorrectAnswersInARow() == 3) {
+                    phrases.remove(phrase);
+                    System.out.printf("Correct answers in a row: %d\n", phrase.getCorrectAnswersInARow());
                     System.out.println("Removing number from number pull.\n");
                     continue;
                 }
                 System.out.println("Correct.");
-                System.out.printf("Correct answers in a row: %d\n\n", number.getCorrectAnswersInARow());
+                System.out.printf("Correct answers in a row: %d\n\n", phrase.getCorrectAnswersInARow());
             } else {
-                number.setCorrectAnswersInARow(0);
-                weakNumber.add(number);
-                System.out.printf("Wrong. Correct answer: %s\n\n", number.getStringName());
+                phrase.setCorrectAnswersInARow(0);
+                weakPhrase.add(phrase);
+                System.out.printf("Wrong. Correct answer: %s\n\n", phrase.getStringName());
             }
         }
         System.out.println("Well done.");
         System.out.println("Weak numbers:");
-        weakNumber.sort(Comparator.comparingInt(Number::getNumericValue));
-        System.out.println(weakNumber);
+        weakPhrase.sort(Comparator.comparingInt(Phrase::getNumericValue));
+        System.out.println(weakPhrase);
     }
 }

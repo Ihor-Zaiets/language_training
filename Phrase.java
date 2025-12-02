@@ -1,12 +1,12 @@
-public class Number {
+public class Phrase {
     private int numericValue;
     private String stringName;
     private int correctAnswersInARow;
 
-    public Number() {
+    public Phrase() {
     }
 
-    public Number(int numericValue, String stringName) {
+    public Phrase(int numericValue, String stringName) {
         this.numericValue = numericValue;
         this.stringName = stringName;
         this.correctAnswersInARow = 0;
