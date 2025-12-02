@@ -3,45 +3,73 @@ import java.util.List;
 
 public class LearningData {
 
-    public static List<Number> getNumbersFrom1To10() {
-        List<Number> numbers = new ArrayList<>();
-        numbers.add(new Number(1, "un"));
-        numbers.add(new Number(2, "deux"));
-        numbers.add(new Number(3, "trois"));
-        numbers.add(new Number(4, "quatre"));
-        numbers.add(new Number(5, "cinq"));
-        numbers.add(new Number(6, "six"));
-        numbers.add(new Number(7, "sept"));
-        numbers.add(new Number(8, "huit"));
-        numbers.add(new Number(9, "neuf"));
-        numbers.add(new Number(10, "dix"));
-        return numbers;
+    public static List<Phrase> getNumbersFrom1To10() {
+        List<Phrase> learningData = new ArrayList<>();
+        learningData.add(new Phrase("1", "un"));
+        learningData.add(new Phrase("2", "deux"));
+        learningData.add(new Phrase("3", "trois"));
+        learningData.add(new Phrase("4", "quatre"));
+        learningData.add(new Phrase("5", "cinq"));
+        learningData.add(new Phrase("6", "six"));
+        learningData.add(new Phrase("7", "sept"));
+        learningData.add(new Phrase("8", "huit"));
+        learningData.add(new Phrase("9", "neuf"));
+        learningData.add(new Phrase("10", "dix"));
+        return learningData;
     }
-    public static List<Number> getNumbersFrom11To19() {
-        List<Number> numbers = new ArrayList<>();
-        numbers.add(new Number(11, "onze"));
-        numbers.add(new Number(12, "douze"));
-        numbers.add(new Number(13, "treize"));
-        numbers.add(new Number(14, "quatorze"));
-        numbers.add(new Number(15, "quinze"));
-        numbers.add(new Number(16, "seize"));
-        numbers.add(new Number(17, "dix-sept"));
-        numbers.add(new Number(18, "dix-huit"));
-        numbers.add(new Number(19, "dix-neuf"));
-        return numbers;
+    public static List<Phrase> getNumbersFrom11To19() {
+        List<Phrase> learningData = new ArrayList<>();
+        learningData.add(new Phrase("11", "onze"));
+        learningData.add(new Phrase("12", "douze"));
+        learningData.add(new Phrase("13", "treize"));
+        learningData.add(new Phrase("14", "quatorze"));
+        learningData.add(new Phrase("15", "quinze"));
+        learningData.add(new Phrase("16", "seize"));
+        learningData.add(new Phrase("17", "dix-sept"));
+        learningData.add(new Phrase("18", "dix-huit"));
+        learningData.add(new Phrase("19", "dix-neuf"));
+        return learningData;
     }
 
-    public static List<Number> getNumbersFrom20To100() {
-        List<Number> numbers = new ArrayList<>();
-        numbers.add(new Number(20, "vingt"));
-        numbers.add(new Number(30, "trente"));
-        numbers.add(new Number(40, "quarante"));
-        numbers.add(new Number(50, "cinquante"));
-        numbers.add(new Number(60, "soixante"));
-        numbers.add(new Number(70, "soixante-dix"));
-        numbers.add(new Number(80, "quatre-vingts"));
-        numbers.add(new Number(90, "quatre-vingt-dix"));
-        numbers.add(new Number(100, "cent"));
-        return numbers;
+    public static List<Phrase> getNumbersFrom20To100() {
+        List<Phrase> learningData = new ArrayList<>();
+        learningData.add(new Phrase("20", "vingt"));
+        learningData.add(new Phrase("30", "trente"));
+        learningData.add(new Phrase("40", "quarante"));
+        learningData.add(new Phrase("50", "cinquante"));
+        learningData.add(new Phrase("60", "soixante"));
+        learningData.add(new Phrase("70", "soixante-dix"));
+        learningData.add(new Phrase("80", "quatre-vingts"));
+        learningData.add(new Phrase("90", "quatre-vingt-dix"));
+        learningData.add(new Phrase("100", "cent"));
+        return learningData;
+    }
+
+    public static List<Phrase> getPronounsWithVerbToBe() {
+        List<Phrase> learningData = new ArrayList<>();
+        learningData.add(new Phrase("Я есть","je suis"));
+        learningData.add(new Phrase("Ты есть","tu es"));
+        learningData.add(new Phrase("Он есть","il est"));
+        learningData.add(new Phrase("Она есть","elle est"));
+        learningData.add(new Phrase("Оно есть / мы (разг.) есть","on est"));
+        learningData.add(new Phrase("Мы есть","nous sommes"));
+        learningData.add(new Phrase("Вы есть","vous êtes"));
+        learningData.add(new Phrase("Они (муж.) есть","ils sont"));
+        learningData.add(new Phrase("Они (жен.) есть","elles sont"));
+        return learningData;
+    }
+
+    public static List<Phrase> getPronounsWithVerbToHave() {
+        List<Phrase> learningData = new ArrayList<>();
+        learningData.add(new Phrase("Я имею","j'ai"));
+        learningData.add(new Phrase("Ты имеешь","tu as"));
+        learningData.add(new Phrase("Он имеет","il a"));
+        learningData.add(new Phrase("Она имеет","elle a"));
+        learningData.add(new Phrase("Оно имеет / кто-то имеет","on a"));
+        learningData.add(new Phrase("Мы имеем","nous avons"));
+        learningData.add(new Phrase("Вы имеете","vous avez"));
+        learningData.add(new Phrase("Они (муж.) имеют","ils ont"));
+        learningData.add(new Phrase("Они (жен.) имеют","elles ont"));
+        return learningData;
     }
 }
