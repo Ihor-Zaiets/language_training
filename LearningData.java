@@ -44,4 +44,32 @@ public class LearningData {
         learningData.add(new Phrase("100", "cent"));
         return learningData;
     }
+
+    public static List<Phrase> getPronounsWithVerbToBe() {
+        List<Phrase> learningData = new ArrayList<>();
+        learningData.add(new Phrase("Я есть","je suis"));
+        learningData.add(new Phrase("Ты есть","tu es"));
+        learningData.add(new Phrase("Он есть","il est"));
+        learningData.add(new Phrase("Она есть","elle est"));
+        learningData.add(new Phrase("Оно есть / мы (разг.) есть","on est"));
+        learningData.add(new Phrase("Мы есть","nous sommes"));
+        learningData.add(new Phrase("Вы есть","vous êtes"));
+        learningData.add(new Phrase("Они (муж.) есть","ils sont"));
+        learningData.add(new Phrase("Они (жен.) есть","elles sont"));
+        return learningData;
+    }
+
+    public static List<Phrase> getPronounsWithVerbToHave() {
+        List<Phrase> learningData = new ArrayList<>();
+        learningData.add(new Phrase("Я имею","j'ai"));
+        learningData.add(new Phrase("Ты имеешь","tu as"));
+        learningData.add(new Phrase("Он имеет","il a"));
+        learningData.add(new Phrase("Она имеет","elle a"));
+        learningData.add(new Phrase("Оно имеет / кто-то имеет","on a"));
+        learningData.add(new Phrase("Мы имеем","nous avons"));
+        learningData.add(new Phrase("Вы имеете","vous avez"));
+        learningData.add(new Phrase("Они (муж.) имеют","ils ont"));
+        learningData.add(new Phrase("Они (жен.) имеют","elles ont"));
+        return learningData;
+    }
 }
