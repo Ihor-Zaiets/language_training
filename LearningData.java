@@ -65,7 +65,7 @@ public class LearningData {
         learningData.add(new Phrase("Ты имеешь","tu as"));
         learningData.add(new Phrase("Он имеет","il a"));
         learningData.add(new Phrase("Она имеет","elle a"));
-        learningData.add(new Phrase("Оно имеет / кто-то имеет","on a"));
+        learningData.add(new Phrase("Оно имеет / мы (разг.) имеем","on a"));
         learningData.add(new Phrase("Мы имеем","nous avons"));
         learningData.add(new Phrase("Вы имеете","vous avez"));
         learningData.add(new Phrase("Они (муж.) имеют","ils ont"));
