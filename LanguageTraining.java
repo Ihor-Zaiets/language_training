@@ -25,7 +25,7 @@ public class LanguageTraining {
                 if (phrase.getCorrectAnswersInARow() == 3) {
                     phrases.remove(phrase);
                     System.out.printf("Correct answers in a row: %d\n", phrase.getCorrectAnswersInARow());
-                    System.out.println("Removing number from number pull.\n");
+                    System.out.println("Removing phrase from phrase pull.\n");
                     continue;
                 }
                 System.out.println("Correct.");
