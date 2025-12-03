@@ -37,7 +37,7 @@ public class LanguageTraining {
             }
         }
         System.out.println("Well done.");
-        System.out.println("Weak numbers:");
+        System.out.println("Weak phrases:");
         weakPhrase.sort(Comparator.comparing(Phrase::getPhraseToLearn));
         System.out.println(weakPhrase);
     }
